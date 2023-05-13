@@ -1,15 +1,19 @@
 import decorations as d
+from utils.Position import Position
+from utils.Size import Size
 
-position = {"x":2,"y":2}
-size = {"length":3, "breadth":3}
+position = Position(2,2)
+size = Size(2,2)
 purchase_cost = {"elixir":0,"gold":0,"gems":0,"dark_elixir":0}
-c = d.Torch()
+c = d.PirateFlag()
 
 print(c.size)
-print(c.purchase_cost)
+type_of_resource = c.purchase_cost.get_type_of_resource()
+print(c.purchase_cost.get_type_of_resource())
+print(c.purchase_cost.get_cost(type_of_resource))
 print(c.purchased_by_user)
-print(c.position)
+print(str(c.position.x) + str(c.position.y))
 
 c.purchase_decoration(position)
-print(c.position)
+print(str(c.position.x) + str(c.position.y))
 print(c.purchased_by_user)

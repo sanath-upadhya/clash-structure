@@ -1,10 +1,13 @@
 from decorations.Decorations import Decorations
+from utils.Size import Size
+from utils.PurchaseCost import PurchaseCost
+import utils.enum as en
 
 class MightyHeroStatue(Decorations):
 
     def __init__(self):
-        size = {"length":1, "breadth":1}
-        purchase_cost = {"elixir":0,"gold":0,"gems":500,"dark_elixir":0}
+        size = Size(1,1)
+        purchase_cost = PurchaseCost(500, en.GEMS)
         picture = "Mighty hero statue picture"
         super().__init__(size, purchase_cost, picture)
         print("creating mighty hero statue")

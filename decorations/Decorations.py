@@ -1,17 +1,17 @@
 from object.Object import Object
+from utils.Position import Position
+from utils.PurchaseCost import PurchaseCost
 
 class Decorations(Object):
-    purchase_cost = {"elixir":0,"gold":0,"gems":0,"dark_elixir":0}
+    purchase_cost: PurchaseCost
     purchased_by_user = False
-    picture = ""
 
     def __init__(self, size, purchase_cost, picture):
-        position = {"x":-1,"y":-1}
-        super().__init__(position, size)
-        self.purchase_cost = purchase_cost.copy()
-        self.picture = picture
+        position = Position(-1, -1)
+        super().__init__(position, size, picture)
+        self.purchase_cost = purchase_cost
 
     def purchase_decoration(self, position):
-        self.position =  position.copy()
+        self.position =  position
         self.purchased_by_user = True
 

@@ -1,13 +1,18 @@
-class Object:
-    position = {"x":-1, "y":-1}
-    size = {"length":0, "breadth":0}
+from utils.Position import Position
+from utils.Size import Size
 
-    def __init__(self, position, size):
-        self.position = position.copy()
-        self.size = size.copy()
+class Object:
+    position: Position
+    size: Size
+    picture: str
+
+    def __init__(self, position, size, picture):
+        self.position = position
+        self.size = size
+        self.picture = picture
 
     def move_object(self, new_position):
-        self.position = new_position.copy()
+        self.position = new_position
 
 
 

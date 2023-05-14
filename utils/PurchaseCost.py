@@ -38,5 +38,18 @@ class PurchaseCost:
             return self.gems
         else:
             return -1
+        
+    def set_cost(self, cost):
+        if self.type_of_resource == en.ELIXIR:
+            self.elixir = cost
+        elif self.type_of_resource == en.GOLD:
+            self.gold = cost
+        elif self.type_of_resource == en.DARK_ELIXIR:
+            self.dark_elixir = cost 
+        elif self.type_of_resource == en.GEMS:
+            self.gems = cost
+        else:
+            return -1
+
 
 

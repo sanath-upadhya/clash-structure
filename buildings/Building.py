@@ -19,5 +19,18 @@ class Building(Object):
         self.cost = purchase_cost
         self.time = time
 
+    def purchase_building(self, position):
+        self.created_by_user = True
+        self.position = position
+
+    def upgrade_building(self):
+        if self.current_level < self.max_th_upgrade_level:
+            self.current_level = self.current_level + 1
+            return True
+        else:
+            return False
+    
+
+
 
 

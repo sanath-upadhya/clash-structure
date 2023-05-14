@@ -14,4 +14,14 @@ class BuilderHut(Building):
         purchase_cost = PurchaseCost(en.BUILDER_HUT_COST[number],en.GEMS)
         time = 0
         super().__init__(size, picture, hitpoints, purchase_cost, time)
-        
+
+        self.current_level = 1
+        self.max_level = 1
+        self.max_th_upgrade_level = 1
+        self.unlock_th_level = 1
+
+    def purchase_builder_hut(self, position):
+        super().purchase_building(position)
+    
+
+
